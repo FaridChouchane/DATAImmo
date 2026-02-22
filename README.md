@@ -1,13 +1,16 @@
 # 🏠 DATAImmo — Base de données immobilière nationale
 
 <div align="center">
-
+    
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat-square&logo=mysql&logoColor=white)
 ![HeidiSQL](https://img.shields.io/badge/HeidiSQL-11.3-6db33f?style=flat-square)
 ![SQL](https://img.shields.io/badge/SQL-Advanced-orange?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square)
 ![Data](https://img.shields.io/badge/Data-Open%20Data%20France-blue?style=flat-square)
 
+<div align="center">
+  <img src="la_place_immo.png" alt="laplaceimmo width="300"/>
+</div>    
 **Conception et implémentation d'une base de données relationnelle pour l'analyse du marché immobilier français**
 
 *Projet réalisé dans le cadre de la formation Data Analyst — OpenClassrooms*
