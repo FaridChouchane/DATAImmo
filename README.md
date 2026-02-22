@@ -9,7 +9,7 @@
 ![Data](https://img.shields.io/badge/Data-Open%20Data%20France-blue?style=flat-square)
 
 <div align="center">
-  <img src="la_place_immo.png" alt="laplaceimmo width="300"/>
+  <img src="assets/la_place_immo.png" alt="laplaceimmo width="300"/>
 </div>    
 **Conception et implémentation d'une base de données relationnelle pour l'analyse du marché immobilier français**
 
