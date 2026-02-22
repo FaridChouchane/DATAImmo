@@ -16,6 +16,31 @@
 
 ---
 
+## 📁 Structure du projet
+
+```
+📦 DATAImmo_Chouchane_Farid/
+├── 📄 README.md
+├── 📂 sql/
+│   ├── create_tables.sql          # DDL — Création des tables
+│   └── requetes.sql               # 12 requêtes métier
+├── 📂 livrables/
+│   ├── 1_dictionnaire_donnees.xlsx
+│   ├── 2_schema_relationnel.pdf
+│   ├── 3_captures_bdd/
+│   │   ├── table_biens.jpg
+│   │   ├── table_communes.jpg
+│   │   ├── table_typeDeBiens.jpg
+│   │   └── table_ventes.jpg
+│   └── 4_requetes_resultats.pdf
+└── 📂 data/
+    ├── Valeurs_foncieres.xlsx
+    ├── donnees_communes.xlsx
+    └── referentiel_geographique.xlsx
+```
+
+---
+
 ## 📋 Sommaire
 
 - [Contexte](#-contexte)
@@ -45,7 +70,7 @@
 
 | Source | Contenu | Format |
 |--------|---------|--------|
-| [DVF — data.gouv.fr](https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/) | Transactions immobilières et foncières | `.csv` |
+| [DVF — data.gouv.fr](https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres/) | Transactions immobilières et foncières (Demandes de Valeurs Foncières) | `.csv` |
 | [INSEE](https://www.insee.fr) | Recensement de la population par commune | `.xlsx` |
 | [Référentiel géographique — data.gouv.fr](https://www.data.gouv.fr) | Communes, départements, régions | `.xlsx` |
 
@@ -456,7 +481,11 @@ LIMIT 20;
 | 💰 Prix moyen m² en Île-de-France | **7 050 €** |
 | 🏆 Département le plus cher | **94 — Val-de-Marne (13 636 €/m²)** |
 | 📈 Évolution ventes T1 → T2 | **+3,68 %** |
+<<<<<<< HEAD
 | 📐 Écart prix 2P vs 3P | **13,05 %** |
+=======
+| 📐 Écart prix m² 2P vs 3P | **13,05 %** |
+>>>>>>> 21d7192 (Modification du Readme)
 | 🌆 Nombre de communes avec croissance > 20% | **562** |
 | 🥇 Valeur foncière moyenne max | **Lyon 2ème — 455 217 €** |
 
@@ -483,31 +512,6 @@ LIMIT 20;
 - [x] Création de vues (`CREATE VIEW`) et opérations `UNION`
 - [x] Agrégations et fonctions analytiques (`AVG`, `COUNT`, `ROUND`)
 - [x] Communication des résultats à des parties prenantes non-techniques
-
----
-
-## 📁 Structure du projet
-
-```
-📦 DATAImmo_Chouchane_Farid/
-├── 📄 README.md
-├── 📂 sql/
-│   ├── create_tables.sql          # DDL — Création des tables
-│   └── requetes.sql               # 12 requêtes métier
-├── 📂 livrables/
-│   ├── 1_dictionnaire_donnees.xlsx
-│   ├── 2_schema_relationnel.pdf
-│   ├── 3_captures_bdd/
-│   │   ├── table_biens.jpg
-│   │   ├── table_communes.jpg
-│   │   ├── table_typeDeBiens.jpg
-│   │   └── table_ventes.jpg
-│   └── 4_requetes_resultats.pdf
-└── 📂 data/
-    ├── Valeurs_foncieres.xlsx
-    ├── donnees_communes.xlsx
-    └── referentiel_geographique.xlsx
-```
 
 ---
 
