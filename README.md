@@ -241,7 +241,35 @@ CREATE TABLE IF NOT EXISTS ventes (
 
 ### 3. Charger les données
 
-Les données ont été préparées via **Excel / Power Query** pour correspondre au schéma, puis importées via HeidiSQL (Import CSV).
+Les données brutes ont été nettoyées et restructurées via **Excel / Power Query** pour correspondre au schéma relationnel, puis importées table par table via HeidiSQL.
+
+**Étapes de préparation (Power Query) :**
+1. Suppression des colonnes inutiles du fichier DVF brut
+2. Séparation des données en 4 tables distinctes (biens, communes, ventes, typeDeBiens)
+3. Gestion des valeurs nulles sur `valeurFonciere` et `surfaceReelBati`
+4. Uniformisation des types (dates au format `YYYY-MM-DD`, codes département en INTEGER)
+5. Import CSV table par table dans HeidiSQL
+
+**Vérification après import :**
+
+```sql
+-- Contrôle du chargement des 4 tables
+SELECT 'biens'        AS "Table", COUNT(*) AS "Nb lignes" FROM biens
+UNION SELECT 'communes',    COUNT(*) FROM communes
+UNION SELECT 'ventes',      COUNT(*) FROM ventes
+UNION SELECT 'typeDeBiens', COUNT(*) FROM typeDeBiens;
+```
+
+```sql
+-- Vérification de la qualité des données
+SELECT COUNT(*)                          AS "Total biens",
+       SUM(valeurFonciere IS NULL)       AS "Valeurs foncières nulles",
+       SUM(surfaceReelBati IS NULL)      AS "Surfaces nulles",
+       COUNT(DISTINCT codeDepartement)   AS "Nb départements couverts",
+       COUNT(DISTINCT libelleCommune)    AS "Nb communes distinctes"
+FROM biens
+JOIN communes ON biens.commune_id = communes.id;
+```
 
 ---
 
