@@ -475,21 +475,22 @@ GROUP BY libelleCommune
 ORDER BY 3 DESC
 LIMIT 3;
 
--- Union des 5 vues
+-- Union des 5 vues triée par valeur décroissante
 SELECT * FROM moyvalfon6
 UNION SELECT * FROM moyvalfon13
 UNION SELECT * FROM moyvalfon33
 UNION SELECT * FROM moyvalfon59
-UNION SELECT * FROM moyvalfon69;
+UNION SELECT * FROM moyvalfon69
+ORDER BY `Moyenne valeurs foncières` DESC;
 ```
 
-| Dépt | Commune | Valeur foncière moyenne |
+| Dépt | Commune | Moyenne valeurs foncières |
 |------|---------|------------------------|
+| 69 | Lyon 2ème | **455 217 €** |
 | 6 | Nice | 273 715 € |
-| 13 | Marseille 2ème | 152 732 € |
 | 33 | Bordeaux | 253 232 € |
 | 59 | Lille | 206 779 € |
-| 69 | Lyon 2ème | **455 217 €** |
+| 13 | Marseille 2ème | 152 732 € |
 
 ---
 
@@ -509,6 +510,10 @@ GROUP BY libelleCommune, codeDepartement, population
 ORDER BY 5 DESC
 LIMIT 20;
 ```
+
+> ⚠️ La colonne `population` n'a pas été intégrée dans le périmètre 
+> de ce POC. Cette requête est fonctionnelle mais nécessite l'ajout 
+> des données de population INSEE dans la table `communes`.
 
 ---
 
