@@ -80,28 +80,39 @@
 
 ### Schéma relationnel (3NF)
 
-```
-┌─────────────────┐        ┌──────────────────────────┐        ┌─────────────────┐
-│   typeDeBiens   │        │          biens           │        │    communes     │
-├─────────────────┤        ├──────────────────────────┤        ├─────────────────┤
-│ 🔑 id (PK)      │ 1───0..N│ 🔑 id (PK)               │ 0..N───1│ 🔑 id (PK)      │
-│ libelleTypeBien │        │ numDisposition           │        │ libelleCommune  │
-└─────────────────┘        │ valeurFonciere           │        │ codePostal      │
-                           │ surfaceReelBati          │        │ codeDepartement │
-                           │ nombrePiece              │        │ codeCommune     │
-                           │ 🔗 typeDeBien_id (FK)    │        │ voie, typeVoie… │
-                           │ 🔗 commune_id (FK)       │        └─────────────────┘
-                           └──────────┬───────────────┘
-                                      │ 1
-                                   0..N
-                           ┌──────────┴───────────────┐
-                           │          ventes          │
-                           ├──────────────────────────┤
-                           │ 🔑 id (PK)               │
-                           │ dateVente                │
-                           │ natureVente              │
-                           │ 🔗 bien_id (FK)          │
-                           └──────────────────────────┘
+```mermaid
+erDiagram
+    typeDeBiens {
+        int id PK
+        varchar libelleTypeBien
+    }
+    biens {
+        int id PK
+        int numDisposition
+        float valeurFonciere
+        float surfaceReelBati
+        int nombrePiece
+        int typeDeBien_id FK
+        int commune_id FK
+    }
+    communes {
+        int id PK
+        varchar libelleCommune
+        int codePostal
+        int codeDepartement
+        int codeCommune
+        varchar voie
+    }
+    ventes {
+        int id PK
+        date dateVente
+        varchar natureVente
+        int bien_id FK
+    }
+
+    typeDeBiens ||--o{ biens : "type"
+    communes ||--o{ biens : "localisation"
+    biens ||--o{ ventes : "vente"
 ```
 
 ### Dictionnaire des données
@@ -481,11 +492,7 @@ LIMIT 20;
 | 💰 Prix moyen m² en Île-de-France | **7 050 €** |
 | 🏆 Département le plus cher | **94 — Val-de-Marne (13 636 €/m²)** |
 | 📈 Évolution ventes T1 → T2 | **+3,68 %** |
-<<<<<<< HEAD
-| 📐 Écart prix 2P vs 3P | **13,05 %** |
-=======
 | 📐 Écart prix m² 2P vs 3P | **13,05 %** |
->>>>>>> 21d7192 (Modification du Readme)
 | 🌆 Nombre de communes avec croissance > 20% | **562** |
 | 🥇 Valeur foncière moyenne max | **Lyon 2ème — 455 217 €** |
 
