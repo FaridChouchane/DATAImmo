@@ -457,7 +457,7 @@ LIMIT 20;
 | 🏆 Département le plus cher | **94 — Val-de-Marne (13 636 €/m²)** |
 | 📈 Évolution ventes T1 → T2 | **+3,68 %** |
 | 📐 Écart prix 2P vs 3P | **13,05 %** |
-| 🌆 Communes forte croissance (+20%) | **562** |
+| 🌆 Nombre de communes avec croissance > 20% | **562** |
 | 🥇 Valeur foncière moyenne max | **Lyon 2ème — 455 217 €** |
 
 ---
