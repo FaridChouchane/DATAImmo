@@ -10,7 +10,8 @@
 
 <div align="center">
   <img src="assets/la_place_immo.png" alt="laplaceimmo width="300"/>
-</div>    
+</div>   
+
 **Conception et implémentation d'une base de données relationnelle pour l'analyse du marché immobilier français**
 
 *Projet réalisé dans le cadre de la formation Data Analyst — OpenClassrooms*
